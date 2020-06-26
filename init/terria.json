@@ -1,0 +1,311 @@
+{
+  "baseMapName": "Positron (Light)",
+  "homeCamera": {
+    "west": 100,
+    "south": -45,
+    "east": 167,
+    "north": -9
+  },
+  "catalog": [
+    {
+      "name": "Topography/Bathymetry",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "layers": "ppbha:combined_2.5m_ppb_2007_bathy.uncompr",
+          "name": "PPB Bathymetry 2.5m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",  
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75,
+          "styles": "climate:single-band-turbo",
+          "styleEnvColorScaleRangeKeys": [
+            "minValue",
+            "maxValue"
+          ],
+          "colorScaleMinimum": -40,
+          "colorScaleMaximum": 260
+        },
+        {
+          "layers": "ppbha:combined_melbourne_2017nov28_dtm1m_v10cm_mga55.uncompressed",
+          "name": "PPB Digital Terrain Model 1m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75,
+          "styles": "climate:single-band-turbo",
+          "styleEnvColorScaleRangeKeys": [
+            "minValue",
+            "maxValue"
+          ],
+          "colorScaleMinimum": -40,
+          "colorScaleMaximum": 260
+        }
+      ]
+    },
+    {
+      "name": "Erosion",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "layers": "ppbha:ST-hazard-merged",
+          "name": "Erosion hazard V1",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "description": "Probability of erosion presented for each sea level rise scenario with zone 1 showcasing 95% likelihood, zone 2 between 5 and 95% likelihood and zone 3 less than 5% likelihood. This is the latest version, there is also an other version (see Erosion hazard V2)",
+          "name": "Erosion hazard V2",
+          "url": "https://storage.googleapis.com/ppbcha-public-data/erosion/hazard-zones/Hazard_zones_SLR140B.geoJSON",
+          "type": "geojson"
+        },
+        {
+          "description": "Shoreline mapping: Point Nepean National Park",
+          "name": "Shoreline mapping: Point Nepean National Park",
+          "url": "https://storage.googleapis.com/ppbcha-public-data/erosion/shoreline-mapping/chg_poly_488_level6.geoJSON",
+          "type": "geojson"
+        },
+        {
+          "layers": "ppbha:coastal_levees_lines_Port_Phillip_Bay_GDA94",
+          "name": "Coastal levees",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "layers": "ppbha:VIC_Protection_Structures_Condition_Attributes_13Jan2013_Port_Phillip_Bay_GDA94",
+          "name": "Coastal protection structures",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "layers": "ppbha:RunupZones_SLR_0.8",
+          "name": "Runup zones SLR 0.8m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "layers": "ppbha:RunupZones_SLR_0",
+          "name": "Runup zones SLR 0m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "layers": "ppbha:Overtopflag_SLR_0.8",
+          "name": "Overtopflag SLR 0.8m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        },
+        {
+          "layers": "ppbha:Overtopflag_SLR_0",
+          "name": "Overtopflag SLR 0m",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75
+        }
+      ]
+    },
+    {
+      "name": "Inundation",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "layers": "climate:slr_all_dates",
+          "name": "Victorian Coastal Inundation (simple SLR with storm tide) ",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/climate/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 1
+        },
+        {
+          "layers": "ppbha:ppb-inundation",
+          "name": "PPB Inundation - 25m whole bay",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75,
+          "styles": "climate:single-band-turbo",
+          "styleEnvColorScaleRangeKeys": [
+            "minValue",
+            "maxValue"
+          ],
+          "colorScaleMinimum": 0,
+          "colorScaleMaximum": 15
+        },
+        {
+          "layers": "ppbha:ppb-inundation-mosaic",
+          "name": "PPB Inundation - 5m low lying regions",
+          "url": "http://ppbcha.duckdns.org:8888/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75,
+          "styles": "climate:single-band-turbo",
+          "styleEnvColorScaleRangeKeys": [
+            "minValue",
+            "maxValue"
+          ],
+          "colorScaleMinimum": 0,
+          "colorScaleMaximum": 15
+        }
+        
+        ,
+        {
+          "layers": "ppbcha-inundation:Inundation_height_max_slr_0.0",
+          "description" : "Inundation for sea level rise 0.0m with No rainfall and 5% AEP Strom Surge\n\n Regions : Western, Southern, and Eastern regions",
+          "name": "PPB Inundation - 0.0 SLR Height Max",
+          "url": "http://localhost:8080/geoserver/ows",
+          "type": "wms",
+          "isGeoServer": true,
+          "opacity": 0.75,
+          "styles": "ppbcha-inundation:ppbcha-inundation",
+          "styleEnvColorScaleRangeKeys": [
+            "minValue",
+            "maxValue"
+          ],
+          "colorScaleMinimum": 0,
+          "colorScaleMaximum": 25
+        }
+      ]
+    },
+    {
+      "description": "Groundwater",
+      "name": "Groundwater",
+      "url": "http://ppbcha.duckdns.org:8888/geoserver/ppbcha-cerdi-gw-2/ows",
+      "type": "wms-getCapabilities",
+      "isGeoServer": true
+    },
+    // {
+    //   "description": "Groundwater V2",
+    //   "name": "Groundwater V2",
+    //   "url": "http://ppbcha.duckdns.org:8888/geoserver/ppbcha-cerdi/ows",
+    //   "type": "wms-getCapabilities",
+    //   "isGeoServer": true
+    // },
+    {
+      "description": "DELWP aerial imagery",
+      "name": "DELWP aerial imagery",
+      "url": "http://ppbcha.duckdns.org:8888/geoserver/delwp-iws/ows",
+      "type": "wms-getCapabilities",
+      "isGeoServer": true
+    },
+    {
+      "minimumMaxScaleDenominator": 10000000000,
+      "filterQuery": [
+        "fq=+(res_format%3Awms%20OR%20res_format%3AWMS)",
+        "fq=+(res_format%3Akmz%20OR%20res_format%3Ageojson%20OR%20res_format%3Acsv-geo-au%20OR%20res_format%3Aaus-geo-csv)"
+      ],
+      "url": "https://discover.data.vic.gov.au/",
+      "includeCsv": true,
+      "includeKml": true,
+      "ungroupedTitle": "(No group)",
+      "type": "ckan",
+      "name": "Data.vic.gov.au (Victorian Government open data)",
+      "groupBy": "organization"
+    },
+    {
+      "blacklist": {
+        "Rainforests (EVC_2005)": true
+      },
+      "groupBy": "organization",
+      "minimumMaxScaleDenominator": 10000000000,
+      "filterByWmsGetCapabilities": false,
+      "filterQuery": [
+        {
+          "fq": "+(res_format:(geojson OR GeoJSON OR kml OR KML OR kmz OR KMZ OR wms OR WMS OR CSV-GEO-AU OR csv-geo-au OR aus-geo-csv OR \"Esri REST\"))"
+        }
+      ],
+      "url": "http://www.data.gov.au",
+      "type": "ckan",
+      "name": "Data.gov.au (Federal Government open data)",
+      "includeCsv": true,
+      "includeGeoJson": true,
+      "includeKml": true,
+      "includeWms": true,
+      "includeWfs": true,
+      "includeEsriMapServer": true,
+      "includeEsriFeatureServer": true
+    },
+    {
+      "name": "Melbourne 3D city model (aero3Dpro)",
+      "type": "3d-tiles",
+      "description": "![aero3Dpro](http://aero3dpro.com.au/images/aero3dpro-logo2.png)\n\nAero3Dpro is an Australian 3D mapping service for the generation of geographically accurate, fully textured and high resolution 3D models of natural and urban environments.\n\nIt is an end-to-end service based on aerial photogrammetry techniques including flight planning, image acquisition, 3D processing, geo-registration and final delivery.\n\nAero3Dpro models can be provided as stand-alone data for use in common 3D rendering and CAD software or as 3D GIS-ready products.\n\nhttp://aero3dpro.com.au/\n\nThese datasets use the [Cesium 3D Tiles](https://github.com/AnalyticalGraphicsInc/3d-tiles) format.",
+      "url": "https://sample.aero3dpro.com.au/Melbourne/Scene/recon_h_3DTiles.json",
+      "options": {
+        "maximumScreenSpaceError": 1,
+        "maximumNumberOfLoadedTiles": 1000
+      },
+      "rectangle": {
+        "west": 144.868,
+        "south": -37.885,
+        "east": 145.018,
+        "north": -37.775
+      }
+    },
+    {
+      "name": "ppbcha-erosion",
+      "url": "http://localhost:8080/geoserver/ppbcha-erosion/ows",
+      "type": "wms-getCapabilities",
+      "isGeoServer": true
+    },
+    {
+      "name": "ppbcha-inundation",
+      "url": "http://localhost:8080/geoserver/ppbcha-inundation/ows",
+      "type": "wms-getCapabilities",
+      "isGeoServer": true
+    }, 
+    {
+      "name": "Sample flight",
+      "type": "czml",
+      "description": "this a testing to czml",
+      "url": "data/sampleFlight.czml"
+  
+    },
+    {
+      "layers": "ppbcha-test:tasmania_roads",
+      "name": "Tasmania roads",
+      "url": "http://localhost:8080/geoserver/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+    {
+      "layers": "ppbcha-test:mount_alexander_shire_networkP",
+      "name": "States",
+      "url": "http://localhost:8080/geoserver/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+    {
+      "layers": "poly_landmarks",
+      "name": "Market",
+      "url": "http://localhost:8080/geoserver/tiger/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+    {
+      "name": "Cross Section analytics",
+      "url": "http://0.0.0.0:5000/wps",
+      "type": "wps",
+      "identifier": "test"
+    }
+        
+
+  ]
+}

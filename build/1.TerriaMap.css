@@ -1,0 +1,227 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,400italic,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,400italic,600);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+/* Mixin */
+.tjs-nav__btn, .tjs-nav__btn-primary, .tjs-nav__btn-blink {
+  border-radius: 50%;
+  display: block;
+  float: inherit;
+  background: #fff;
+  color: #535c68;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15); }
+  .tjs-nav__btn svg, .tjs-nav__btn-primary svg, .tjs-nav__btn-blink svg {
+    height: 24px;
+    width: 24px;
+    margin: 0 auto;
+    vertical-align: middle; }
+  @media (min-width: 768px) {
+    .tjs-nav__btn, .tjs-nav__btn-primary, .tjs-nav__btn-blink {
+      height: 31px;
+      width: 30px; }
+      .tjs-nav__btn svg, .tjs-nav__btn-primary svg, .tjs-nav__btn-blink svg {
+        height: 20px;
+        width: 20px; } }
+
+.tjs-nav__btn-primary {
+  background: #686de0; }
+  .tjs-nav__btn-primary svg {
+    fill: #fff; }
+    .tjs-nav__btn-primary svg path {
+      fill: #fff; }
+  .tjs-nav__btn-primary:hover, .tjs-nav__btn-primary--hover {
+    background: #9296e9; }
+
+.tjs-nav__btn-blink svg {
+  -webkit-animation-name: tjs-nav__blinker;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: tjs-nav__blinker;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: tjs-nav__blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+@-moz-keyframes tjs-nav__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes tjs-nav__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes tjs-nav__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Mixin */
+/* Mixin */
+.tjs-augmented_virtuality_tool__btn, .tjs-augmented_virtuality_tool__btn-primary, .tjs-augmented_virtuality_tool__btn-blink {
+  border-radius: 50%;
+  display: block;
+  float: inherit;
+  background: #fff;
+  color: #535c68;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15); }
+  .tjs-augmented_virtuality_tool__btn svg, .tjs-augmented_virtuality_tool__btn-primary svg, .tjs-augmented_virtuality_tool__btn-blink svg {
+    height: 24px;
+    width: 24px;
+    margin: 0 auto;
+    vertical-align: middle; }
+  @media (min-width: 768px) {
+    .tjs-augmented_virtuality_tool__btn, .tjs-augmented_virtuality_tool__btn-primary, .tjs-augmented_virtuality_tool__btn-blink {
+      height: 31px;
+      width: 30px; }
+      .tjs-augmented_virtuality_tool__btn svg, .tjs-augmented_virtuality_tool__btn-primary svg, .tjs-augmented_virtuality_tool__btn-blink svg {
+        height: 20px;
+        width: 20px; } }
+
+.tjs-augmented_virtuality_tool__btn-primary {
+  background: #686de0; }
+  .tjs-augmented_virtuality_tool__btn-primary svg {
+    fill: #fff; }
+    .tjs-augmented_virtuality_tool__btn-primary svg path {
+      fill: #fff; }
+  .tjs-augmented_virtuality_tool__btn-primary:hover, .tjs-augmented_virtuality_tool__btn-primary--hover {
+    background: #9296e9; }
+
+.tjs-augmented_virtuality_tool__btn-blink svg {
+  -webkit-animation-name: tjs-augmented_virtuality_tool__blinker;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: tjs-augmented_virtuality_tool__blinker;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: tjs-augmented_virtuality_tool__blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+@-moz-keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* Mixin */
+/* Mixin */
+.tjs-augmented_virtuality_tool__btn, .tjs-augmented_virtuality_tool__btn-primary, .tjs-augmented_virtuality_tool__btn-blink {
+  border-radius: 50%;
+  display: block;
+  float: inherit;
+  background: #fff;
+  color: #535c68;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15); }
+  .tjs-augmented_virtuality_tool__btn svg, .tjs-augmented_virtuality_tool__btn-primary svg, .tjs-augmented_virtuality_tool__btn-blink svg {
+    height: 24px;
+    width: 24px;
+    margin: 0 auto;
+    vertical-align: middle; }
+  @media (min-width: 768px) {
+    .tjs-augmented_virtuality_tool__btn, .tjs-augmented_virtuality_tool__btn-primary, .tjs-augmented_virtuality_tool__btn-blink {
+      height: 31px;
+      width: 30px; }
+      .tjs-augmented_virtuality_tool__btn svg, .tjs-augmented_virtuality_tool__btn-primary svg, .tjs-augmented_virtuality_tool__btn-blink svg {
+        height: 20px;
+        width: 20px; } }
+
+.tjs-augmented_virtuality_tool__btn-primary {
+  background: #686de0; }
+  .tjs-augmented_virtuality_tool__btn-primary svg {
+    fill: #fff; }
+    .tjs-augmented_virtuality_tool__btn-primary svg path {
+      fill: #fff; }
+  .tjs-augmented_virtuality_tool__btn-primary:hover, .tjs-augmented_virtuality_tool__btn-primary--hover {
+    background: #9296e9; }
+
+.tjs-augmented_virtuality_tool__btn-blink svg {
+  -webkit-animation-name: tjs-augmented_virtuality_tool__blinker;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: tjs-augmented_virtuality_tool__blinker;
+  -moz-animation-duration: 1s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  animation-name: tjs-augmented_virtuality_tool__blinker;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+@-moz-keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes tjs-augmented_virtuality_tool__blinker {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.tjs-augmented_virtuality_tool__toolButton {
+  display: inline-block; }
+
+.tjs-augmented_virtuality_tool__augmentedVirtualityTool {
+  float: left; }
+
+.tjs-augmented_virtuality_tool__btn, .tjs-augmented_virtuality_tool__btn-primary, .tjs-augmented_virtuality_tool__btn-blink {
+  margin-right: 15px; }
+
+
+/*# sourceMappingURL=1.TerriaMap.css.map*/

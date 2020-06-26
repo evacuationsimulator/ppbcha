@@ -1,0 +1,636 @@
+{
+  "name": "Analysis Tools",
+  "type": "group",
+  "preserveOrder": true,
+  "items": [
+    {
+      "name": "AUS Temperature Thresholds",
+      "url": "http://climatemap.duckdns.org:5000/wps",
+      "type": "wps",
+      "identifier": "tempthresh",
+    },
+    {
+      "name": "House prices",
+      "url": "http://localhost:5000/wps",
+      "type": "wps",
+      "identifier": "HousePrices",
+      "resultCatalogItemParameters": {
+        "isEnabled": false
+      }
+    },
+    {
+      "name": "VIC Sea level rise (Storm tide)",
+      "url": "http://localhost:5000/wps",
+      "type": "wps",
+      "identifier": "sealevelrise",
+      "resultCatalogItemParameters": {
+        "isEnabled": false
+      }
+    },
+    {
+      "name": "Maximum daily temperature: April",
+      "url": "http://localhost:5000/wps",
+      "type": "wps",
+      "identifier": "meanmaxtemp",
+      "resultCatalogItemParameters": {
+        "isEnabled": false
+      }
+    },
+    {
+      "name": "GeoGLAM Vegetation Cover",
+      "url": "http://gsky.nci.org.au/ows/geoglam",
+      "type": "wps",
+      "identifier": "geometryDrill",
+      "description": "This function can be used to query the Vegetation Fractional Cover layer data. The output is a graph which includes NPV, PV, NPV+PV Total, BS, and Precipitation. ",
+    }
+  ]
+},
+// {
+//   "description": "Local Geoserver",
+//   "name": "Local Geoserver WMS",
+//   "url": "http://localhost:8888/geoserver/ows",
+//   "type": "wms-getCapabilities",
+//   "isGeoServer": true,
+// },
+// {
+//   "name": "PPBCHA",
+//   "type": "group",
+//   "url": "http://static.PPBCHA.nicta.com.au/init/2019-10-22.json"
+// }
+
+
+{
+  "name": "CCIA",
+  "type": "group",
+  "preserveOrder": true,
+  "items": [
+    {
+      "layers": "vic:vic-suburb-house-price",
+      "description": "VIC Suburb median house price",
+      "name": "VIC Suburb median house price",
+      "url": "http://localhost:8888/geoserver/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "useOwnClock": true,
+      "opacity": 1,
+      "styles": "suburb-price",
+      "availableStyles": {
+        "vic:vic-suburb-house-price": [
+          {
+            "name": "suburb-price",
+            "title": "Viridis",
+          },
+          {
+            "name": "suburb-price-rev",
+            "title": "Viridis Reversed",
+          }
+        ]
+      },
+    },
+    {
+      "layers": "climate:slr_all_dates",
+      "description": "VIC Sea level rise (Storm tide)",
+      "name": "VIC Sea level rise (Storm tide)",
+      "url": "http://localhost:8888/geoserver/climate/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+    {
+      "layers": "tasmax_aus_GFDL-ESM2M_r1i1p1_CSIRO-MnCh-wrt-1986-2005-Scl_v1_day-thresholds-DGrLt",
+      "description": "Max temperature thresholds",
+      "name": "Max temperature thresholds",
+      "url": "http://localhost:8888/geoserver/climate/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "isEnabled": false,
+      "isShown": false,
+      "useOwnClock": true,
+      "opacity": 1,
+      "styles": "single-band-magma",
+      // "availableDimensions": {
+      //   "temp-thresl": [
+      //            {
+      //                "name": 'elevation',
+      //                "units": 'CRS:88',
+      //                "unitSymbol": 'm',
+      //                "default": -0.03125,
+      //                "multipleValues": false,
+      //                "nearestValue": false,
+      //                "options": [
+      //                    -0.96875,
+      //                    -0.90625,
+      //                    -0.84375,
+      //                    -0.78125,
+      //                    -0.71875,
+      //                    -0.65625,
+      //                    -0.59375,
+      //                    -0.53125,
+      //                    -0.46875,
+      //                    -0.40625,
+      //                    -0.34375,
+      //                    -0.28125,
+      //                    -0.21875,
+      //                    -0.15625,
+      //                    -0.09375,
+      //                    -0.03125
+      //                ]
+      //            }
+      //        ]
+      //    },
+      "availableStyles": {
+        "tasmax_aus_GFDL-ESM2M_r1i1p1_CSIRO-MnCh-wrt-1986-2005-Scl_v1_day-thresholds-DGrLt": [
+          {
+            "name": "single-band-magma",
+            "title": "Magma",
+          },
+          {
+            "name": "single-band-magma-rev",
+            "title": "Magma Reversed",
+          },
+          {
+            "name": "single-band-turbo",
+            "title": "Turbo",
+          }
+        ]
+      },
+      "styleEnvColorScaleRangeKeys": [
+        "minValue",
+        "maxValue"
+      ],
+      "colorScaleMinimum": 0,
+      "colorScaleMaximum": 31,
+      // "availableStyleEnvs": {
+      //   "single-band-magma" : [
+      //     {
+      //       "name":"B:1",
+      //       "title":"30 Degrees"
+      //     },
+      //     {
+      //       "name":"B:2",
+      //       "title":"31 Degrees"
+      //     },
+      //     {
+      //       "name":"B:3",
+      //       "title":"32 Degrees"
+      //     },
+      //     {
+      //       "name":"B:4",
+      //       "title":"33 Degrees"
+      //     },
+      //     {
+      //       "name":"B:5",
+      //       "title":"34 Degrees"
+      //     },
+      //     {
+      //       "name":"B:6",
+      //       "title":"35 Degrees"
+      //     },
+      //     {
+      //       "name":"B:7",
+      //       "title":"36 Degrees"
+      //     },
+      //     {
+      //       "name":"B:8",
+      //       "title":"37 Degrees"
+      //     },
+      //     {
+      //       "name":"B:9",
+      //       "title":"38 Degrees"
+      //     },
+      //     {
+      //       "name":"B:10",
+      //       "title":"39 Degrees"
+      //     },
+      //     {
+      //       "name":"B:11",
+      //       "title":"40 Degrees"
+      //     },
+      //     {
+      //       "name":"B:12",
+      //       "title":"41 Degrees"
+      //     },
+      //     {
+      //       "name":"B:13",
+      //       "title":"42 Degrees"
+      //     },
+      //     {
+      //       "name":"B:14",
+      //       "title":"43 Degrees"
+      //     },
+      //     {
+      //       "name":"B:15",
+      //       "title":"44 Degrees"
+      //     },
+      //     {
+      //       "name":"B:16",
+      //       "title":"45 Degrees"
+      //     }
+      //   ]
+      // }
+    },
+    {
+      "layers": "climate:BOM-max-temp-april-1961-1990",
+      "description": "Average maximum daily temperature: April 1961-1990",
+      "name": "Maximum daily temperature: April 1961-1990",
+      "url": "http://localhost:8888/geoserver/climate/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "isEnabled": false,
+      "isShown": false,
+      "isLegendVisible": false,
+      "opacity": 1
+    },
+    {
+      "layers": "climate:tasmax_april_2090_rcp45",
+      "description": "Average maximum daily temperature: April 2080-2100 (NorESM1-M rcp45)",
+      "name": "Maximum daily temperature: April 2080-2100 (NorESM1-M rcp45)",
+      "url": "http://localhost:8888/geoserver/climate/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "isEnabled": false,
+      "isShown": false,
+      "isLegendVisible": false,
+      "opacity": 1
+    },
+    {
+      "layers": "climate:tasmax_april_2090_rcp85",
+      "description": "Average maximum daily temperature: April 2080-2100 (NorESM1-M rcp85)",
+      "name": "Maximum daily temperature: April 2080-2100 (NorESM1-M rcp85)",
+      "url": "http://localhost:8888/geoserver/climate/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "isEnabled": false,
+      "isShown": false,
+      "isLegendVisible": false,
+      "opacity": 1
+    },
+  ]
+},
+{
+  "name": "UbiSense",
+  "type": "group",
+  "preserveOrder": true,
+  "items": [
+    {
+      "layers": "tscrn",
+      "description": "Gridded Corrected: Temperature",
+      "name": "Corrected Temperature",
+      "url": "https://senaps.io/thredds/wms/csiro/ubisense/ccam_bc_output/chicago/2019/january/tscrn.ccam_2.00km.201901.nc4",
+      "type": "wms",
+      "opacity": 0.6,
+      "urlAuth": "apikey=wH3dxhdfJ7y5DmpEoEQC67u2c93krO73",
+      "isEnabled": false,
+      "isShown": false,
+      "colorScaleMinimum": 250,
+      "colorScaleMaximum": 300
+    },
+    {
+      "layers": "tscrn",
+      "description": "Gridded Model: Temperature",
+      "name": "Model Temperature",
+      "url": "https://senaps.io/thredds/wms/csiro/ubisense/ccam_output/chicago/2019/january/tscrn.ccam_2.00km.201901.nc4",
+      "type": "wms",
+      "opacity": 0.6,
+      "urlAuth": "apikey=wH3dxhdfJ7y5DmpEoEQC67u2c93krO73",
+      "isEnabled": false,
+      "isShown": false,
+      "colorScaleMinimum": 250,
+      "colorScaleMaximum": 300
+    },
+    {
+      "name": "Senaps Sensors: Temperature",
+      "type": "senaps",
+      "url": "https://senaps.io/api/sensor/v2/streams?id=aot*outStream&expand=true&recursive=true&groupids=aot.chicago&apikey=wH3dxhdfJ7y5DmpEoEQC67u2c93krO73",
+      "isEnabled": false,
+      "isShown": false,
+      "minValue": 250,
+      "maxValue": 300,
+      "drillLayerName": "tscrn",
+      "colorMap": [
+        {
+          "color": "#081d58",
+          "offset": 0
+        },
+        {
+          "color": "#253494",
+          "offset": 0.125
+        },
+        {
+          "color": "#225ea8",
+          "offset": 0.25
+        },
+        {
+          "color": "#1d91c0",
+          "offset": 0.375
+        },
+        {
+          "color": "#41b6c4",
+          "offset": 0.5
+        },
+        {
+          "color": "#7fcdbb",
+          "offset": 0.625
+        },
+        {
+          "color": "#c7e9b4",
+          "offset": 0.75
+        },
+        {
+          "color": "#edf8b1",
+          "offset": 0.875
+        },
+        {
+          "color": "#ffffd9",
+          "offset": 1
+        }
+      ]
+    },
+  ]
+},
+{
+  "name": "PacificMap",
+  "type": "group",
+  "preserveOrder": true,
+  "items": [
+    {
+      "layers": "sat-img:nauru",
+      "description": "Pleiades Satellite Imagery: Nauru",
+      "name": "Pleiades Satellite Imagery: Nauru",
+      "url": "http://localhost:8888/geoserver/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+    {
+      "layers": "sat-img:nauru-ls8-geomedian",
+      "description": "Landsat8 Geomedian: Nauru",
+      "name": "Landsat8 Geomedian: Nauru",
+      "url": "http://localhost:8888/geoserver/ows",
+      "type": "wms",
+      "isGeoServer": true,
+      "opacity": 1
+    },
+  ]
+},
+{
+  "type": "group",
+  "name": "ABS Statistical Areas (2016)",
+  "items": [
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/12",
+      "name": "Statistical area level 1 (SA1)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/13",
+      "name": "Statistical area level 2 (SA2)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/14",
+      "name": "Statistical area level 3 (SA3)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/15",
+      "name": "Statistical area level 4 (SA4)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/0",
+      "name": "Australian drainage divisions (ADD)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/49",
+      "name": "Destination zones (DZN)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/4",
+      "name": "Indigenous areas (IARE)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/5",
+      "name": "Indigenous locations (ILOC)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/6",
+      "name": "Indigenous regions (IREG)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/8",
+      "name": "Local government areas (LGA)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/10",
+      "name": "Natural resource management regions (NRMR)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/11",
+      "name": "Postal areas (POA)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/16",
+      "name": "State electoral divisions (SED)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/17",
+      "name": "Suburbs (SSC)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/19",
+      "name": "Tourism Regions (TR)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/2",
+      "name": "State electoral divisions (SED)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    },
+    {
+      "type": "esri-mapServer",
+      "url": "http://censusdata.abs.gov.au/arcgis/rest/services/ASGS2016/ASGS2016BoundariesOnline/MapServer/3",
+      "name": "Greater capital city statistical areas (GCCSA)",
+      "info": [
+        {
+          "name": "Description",
+          "content": "The ABS Geospatial Web Services provide access to the ASGS boundaries. The objectives of publishing the ASGS boundaries as web services are:<ol><li>To provide easy access to the official ASGS boundaries in a machine readable format which facilitates their use within web applications.</li><li>To provide an unambiguous single point of truth for the ASGS boundaries.</li></ol><br/><a href=\"http://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/1470.0Main%20Features12015\">More information</a>."
+        },
+        {
+          "name": "Licence",
+          "content": "[CC-BY 2.5](http://www.abs.gov.au/websitedbs/D3310114.nsf/4a256353001af3ed4b2562bb00121564/8b2bdbc1d45a10b1ca25751d000d9b03)"
+        }
+      ]
+    }
+  ]
+},
